@@ -1,6 +1,7 @@
 import React from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { RootState } from '../app/store';
 import {
   Container,
   Typography,
@@ -9,10 +10,17 @@ import {
   Button,
 } from '@mui/material';
 
-const DetailPage = () => {
-  const { id } = useParams();
-  const post = useSelector((state) =>
-    state.items.items.find((item) => item.id === parseInt(id))
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+};
+
+const DetailPage: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+
+  const post = useSelector((state: RootState) =>
+    state.items.items.find((item: Post) => item.id === Number(id))
   );
 
   if (!post) {

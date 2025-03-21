@@ -1,8 +1,12 @@
-import React from 'react';
 import { Grid } from '@mui/material';
 import ItemCard from './ItemCard';
+import { Item } from '../types/item'; // Adjust path if needed
 
-const ItemList = ({ items }) => {
+type Props = {
+  items: Item[];
+};
+
+const ItemList: React.FC<Props> = ({ items }) => {
   return (
     <Grid container spacing={2} sx={{ mt: 2 }}>
       {items.map((item) => (

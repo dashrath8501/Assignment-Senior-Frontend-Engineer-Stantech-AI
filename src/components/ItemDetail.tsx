@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router';
 import { useSelector } from 'react-redux';
+import { RootState } from '../app/store'; // Update path as per your project structure
+
 import {
   Container,
   Typography,
@@ -10,9 +12,10 @@ import {
 } from '@mui/material';
 
 const DetailPage = () => {
-  const { id } = useParams();
-  const post = useSelector((state) =>
-    state.items.items.find((item) => item.id === parseInt(id))
+  const { id } = useParams<{ id: string }>();
+
+  const post = useSelector((state: RootState) =>
+    state.items.items.find((item) => item.id === Number(id))
   );
 
   if (!post) {
