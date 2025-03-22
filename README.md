@@ -19,8 +19,8 @@ This is a simple React application that fetches post data from the [JSONPlacehol
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/react-redux-posts-app.git
-cd react-redux-posts-app
+git clone https://github.com/dashrath8501/Assignment-Senior-Frontend-Engineer-Stantech-AI.git
+cd Assignment-Senior-Frontend-Engineer-Stantech-AI
 ```
 
 2. **Install dependencies**
@@ -54,8 +54,8 @@ src/
 ├── features/         # Redux slice + API logic
 ├── pages/            # Route pages (HomePage, DetailPage)
 ├── __tests__/        # Basic test files
-├── App.js
-└── index.js
+├── App.tsx
+└── index.tsx
 ```
 
 ---
